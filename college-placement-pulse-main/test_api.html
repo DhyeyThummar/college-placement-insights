@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+</head>
+<body>
+    <h1>API Test</h1>
+    <div id="results"></div>
+    
+    <script>
+        async function testAPI() {
+            const results = document.getElementById('results');
+            
+            try {
+                // Test colleges endpoint
+                console.log('Testing /api/colleges...');
+                const collegesResponse = await fetch('http://localhost:5051/api/colleges');
+                const collegesData = await collegesResponse.json();
+                console.log('Colleges data:', collegesData);
+                
+                results.innerHTML += '<h2>Colleges:</h2><pre>' + JSON.stringify(collegesData, null, 2) + '</pre>';
+                
+                if (collegesData.colleges && collegesData.colleges.length > 0) {
+                    const firstCollege = collegesData.colleges[0];
+                    const collegeId = firstCollege.id || firstCollege.code;
+                    
+                    console.log('Testing analytics for college:', collegeId);
+                    
+                    // Test analytics endpoint
+                    const analyticsResponse = await fetch(`http://localhost:5051/api/analytics/college/${collegeId}`);
+                    const analyticsData = await analyticsResponse.json();
+                    console.log('Analytics data:', analyticsData);
+                    
+                    results.innerHTML += '<h2>Analytics for ' + collegeId + ':</h2><pre>' + JSON.stringify(analyticsData, null, 2) + '</pre>';
+                }
+                
+            } catch (error) {
+                console.error('API test error:', error);
+                results.innerHTML += '<h2>Error:</h2><pre>' + error.toString() + '</pre>';
+            }
+        }
+        
+        // Run test when page loads
+        testAPI();
+    </script>
+</body>
+</html>

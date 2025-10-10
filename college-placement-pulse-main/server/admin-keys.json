@@ -1,0 +1,74 @@
+{
+  "colleges": [
+    {
+      "id": "1",
+      "name": "Indian Institute of Technology Delhi",
+      "location": "New Delhi",
+      "code": "IITD",
+      "adminKey": "IIT_DELHI_2024"
+    },
+    {
+      "id": "2", 
+      "name": "Indian Institute of Technology Bombay",
+      "location": "Mumbai",
+      "code": "IITB",
+      "adminKey": "IIT_BOMBAY_2024"
+    },
+    {
+      "id": "3",
+      "name": "Indian Institute of Technology Kanpur", 
+      "location": "Kanpur",
+      "code": "IITK",
+      "adminKey": "IIT_KANPUR_2024"
+    },
+    {
+      "id": "4",
+      "name": "Indian Institute of Technology Madras",
+      "location": "Chennai", 
+      "code": "IITM",
+      "adminKey": "IIT_MADRAS_2024"
+    },
+    {
+      "id": "5",
+      "name": "Indian Institute of Technology Kharagpur",
+      "location": "Kharagpur",
+      "code": "IITKGP",
+      "adminKey": "IIT_KHARAGPUR_2024"
+    },
+    {
+      "id": "6",
+      "name": "National Institute of Technology Karnataka",
+      "location": "Surathkal",
+      "code": "NITK",
+      "adminKey": "NIT_KARNATAKA_2024"
+    },
+    {
+      "id": "7",
+      "name": "National Institute of Technology Trichy",
+      "location": "Tiruchirappalli",
+      "code": "NITT",
+      "adminKey": "NIT_TRICHY_2024"
+    },
+    {
+      "id": "8",
+      "name": "Birla Institute of Technology and Science",
+      "location": "Pilani",
+      "code": "BITS",
+      "adminKey": "BITS_PILANI_2024"
+    },
+    {
+      "id": "9",
+      "name": "Delhi Technological University",
+      "location": "New Delhi",
+      "code": "DTU",
+      "adminKey": "DTU_DELHI_2024"
+    },
+    {
+      "id": "10",
+      "name": "Netaji Subhas University of Technology",
+      "location": "New Delhi", 
+      "code": "NSUT",
+      "adminKey": "NSUT_DELHI_2024"
+    }
+  ]
+}
