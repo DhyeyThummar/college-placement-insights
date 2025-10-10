@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "placementsinsights.onrender.com",
+    host: "::",
     port: 5174,
   },
   plugins: [
@@ -14,6 +14,9 @@ export default defineConfig(({ mode }) => ({
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
+  preview: {
+    allowedHosts: ['placementsinsights.onrender.com'],
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
