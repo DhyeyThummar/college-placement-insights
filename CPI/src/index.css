@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* College Placement Insights Design System */
+
+@layer base {
+  :root {
+    /* Dark theme with modern gradients */
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+
+    --primary: 239 84% 67%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 10% 65%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 239 84% 67%;
+
+    --radius: 1rem;
+
+    /* Custom design tokens */
+    --glass: 224 71% 4% / 0.3;
+    --glass-foreground: 213 31% 91%;
+    
+    --hero: 239 84% 67%;
+    --hero-foreground: 210 40% 98%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(239 84% 67%), hsl(262 83% 58%));
+    --gradient-hero: linear-gradient(135deg, hsl(239 84% 67%) 0%, hsl(262 83% 58%) 50%, hsl(284 100% 70%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(224 71% 4% / 0.8) 0%, hsl(215 28% 17% / 0.9) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(224 71% 4% / 0.4) 0%, hsl(215 28% 17% / 0.2) 100%);
+    --gradient-mesh: 
+      radial-gradient(circle at 25% 25%, hsl(239 84% 67% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(262 83% 58% / 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, transparent, hsl(284 100% 70% / 0.05));
+
+    /* Shadows */
+    --shadow-glass: 0 8px 32px 0 hsl(239 84% 67% / 0.1), inset 0 1px 0 hsl(255 100% 100% / 0.1);
+    --shadow-card-hover: 0 20px 40px -12px hsl(239 84% 67% / 0.25);
+    --shadow-elegant: 0 10px 30px -10px hsl(239 84% 67% / 0.3);
+
+    /* Chart colors */
+    --chart-1: 239 84% 67%;
+    --chart-2: 262 83% 58%;
+    --chart-3: 284 100% 70%;
+    --chart-4: 330 81% 60%;
+    --chart-5: 10 79% 66%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background: 
+      radial-gradient(circle at 20% 80%, hsl(239 84% 67% / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(262 83% 58% / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(284 100% 70% / 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, hsl(222 84% 4.9%) 0%, hsl(215 28% 17%) 100%);
+    min-height: 100vh;
+    background-attachment: fixed;
+  }
+
+  /* Glassmorphism utilities */
+  .glass-effect {
+    @apply bg-gradient-glass backdrop-blur-glass border border-white/10;
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .card-hover:hover {
+    @apply scale-[1.02] -translate-y-1;
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* Button hover effects */
+  .btn-hover {
+    @apply transition-all duration-300 ease-out transform;
+  }
+  
+  .btn-hover:hover {
+    @apply scale-105;
+  }
+
+  /* Gradient text effect */
+  .gradient-text {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/70;
+  }
+}
+
+@layer components {
+  /* Hero section animations */
+  .hero-bg {
+    background: 
+      radial-gradient(circle at 20% 80%, hsl(239 84% 67% / 0.2) 0%, transparent 60%),
+      radial-gradient(circle at 80% 20%, hsl(262 83% 58% / 0.2) 0%, transparent 60%),
+      radial-gradient(circle at 40% 40%, hsl(284 100% 70% / 0.15) 0%, transparent 60%),
+      var(--gradient-mesh);
+  }
+  
+  /* Chart hover effects */
+  .chart-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .chart-hover:hover {
+    filter: brightness(1.1) saturate(1.2);
+    transform: scale(1.02);
+  }
+  
+  /* Enhanced glass effect */
+  .glass-enhanced {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid hsl(var(--primary) / 0.2);
+    box-shadow: 
+      0 8px 32px 0 hsl(var(--primary) / 0.1),
+      inset 0 1px 0 hsl(255 100% 100% / 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+
+
